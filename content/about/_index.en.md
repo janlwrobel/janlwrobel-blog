@@ -1,8 +1,6 @@
 ---
-title: About Me
 date: 2026-05-07
 draft: false
-description: Who I am and why this blog exists.
 ---
 
 # About Me

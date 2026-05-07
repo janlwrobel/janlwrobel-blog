@@ -1,63 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Jan Lukasz Wrobel</title>
     <link>https://blog.janlwrobel.it/tags/</link>
     <description>Recent content in Tags on Jan Lukasz Wrobel</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.janlwrobel.it/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.janlwrobel.it/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Career</title>
       <link>https://blog.janlwrobel.it/tags/career/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.janlwrobel.it/tags/career/</guid>
       <description></description>
-      
     </item>
-    
     <item>
       <title>Career-Switch</title>
       <link>https://blog.janlwrobel.it/tags/career-switch/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.janlwrobel.it/tags/career-switch/</guid>
       <description></description>
-      
     </item>
-    
     <item>
       <title>Helpdesk</title>
       <link>https://blog.janlwrobel.it/tags/helpdesk/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.janlwrobel.it/tags/helpdesk/</guid>
       <description></description>
-      
     </item>
-    
     <item>
       <title>Homelab</title>
       <link>https://blog.janlwrobel.it/tags/homelab/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.janlwrobel.it/tags/homelab/</guid>
       <description></description>
-      
     </item>
-    
     <item>
       <title>IT</title>
       <link>https://blog.janlwrobel.it/tags/it/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.janlwrobel.it/tags/it/</guid>
       <description></description>
-      
     </item>
-    
   </channel>
 </rss>

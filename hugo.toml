@@ -1,32 +1,37 @@
 baseURL = 'https://blog.janlwrobel.it/'
 locale = 'en-us'
 title = 'Jan Lukasz Wrobel'
-theme = 'blowfish'
+theme = "PaperMod"
 
-[taxonomies]
-category = 'categories'
-tag = 'tags'
+[pagination]
+pagerSize = 5
 
 [params]
+defaultTheme = "dark"
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowWordCount = true
 description = 'Real IT from the trenches'
 
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
 
+[taxonomies]
+category = 'categories'
+tag = 'tags'
+
 [languages]
 
 [languages.en]
-languageName = 'English'
-languageCode = 'en-gb'
+label = '🇬🇧 English'
+locale = 'en-gb'
 weight = 1
 
-[languages.en.params]
-displayName = 'EN'
-
 [languages.pl]
-languageName = 'Polski'
-languageCode = 'pl-pl'
+label = '🇵🇱 Polski'
+locale = 'pl-pl'
 weight = 2
 
-[languages.pl.params]
-displayName = 'PL'

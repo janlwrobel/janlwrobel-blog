@@ -14,11 +14,3 @@ Bo prawdziwe IT jest chaotyczne.
 I właśnie dlatego tak bardzo mnie wciągnęło.
 
 Jeśli też próbujesz wejść do IT, budujesz homelab albo uczysz się nowych technologii, mam nadzieję, że znajdziesz tutaj coś, co pomoże Ci uniknąć przynajmniej kilku błędów, które sam popełniłem.
-
-{{< button href="/pl/posts/" target="_self" >}}
-Ostatnie wpisy
-{{< /button >}}
-
-{{< button href="/pl/career/" target="_self" >}}
-Zacznij tutaj
-{{< /button >}}

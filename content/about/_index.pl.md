@@ -1,8 +1,6 @@
 ---
-title: "O mnie"
 date: 2026-05-07
 draft: false
-description: "Kim jestem i dlaczego powstał ten blog."
 ---
 
 # O mnie

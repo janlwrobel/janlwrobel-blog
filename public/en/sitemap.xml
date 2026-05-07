@@ -1,61 +1,141 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
   <url>
     <loc>https://blog.janlwrobel.it/about/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
-      rel="alternate"
-      hreflang="pl-pl"
-      href="https://blog.janlwrobel.it/pl/about/"
-    />
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/about/"
+                />
     <xhtml:link
-      rel="alternate"
-      hreflang="en-us"
-      href="https://blog.janlwrobel.it/about/"
-    />
-  </url>
-  <url>
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/about/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/categories/career/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/categories/career/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/categories/career/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/career/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.janlwrobel.it/career/hello-world-career-switch/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
-      rel="alternate"
-      hreflang="pl-pl"
-      href="https://blog.janlwrobel.it/pl/career/hello-world-career-switch/"
-    />
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/career/hello-world-career-switch/"
+                />
     <xhtml:link
-      rel="alternate"
-      hreflang="en-us"
-      href="https://blog.janlwrobel.it/career/hello-world-career-switch/"
-    />
-  </url>
-  <url>
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/career/hello-world-career-switch/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/career-switch/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.janlwrobel.it/career/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
-      rel="alternate"
-      hreflang="pl-pl"
-      href="https://blog.janlwrobel.it/pl/career/"
-    />
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/career/"
+                />
     <xhtml:link
-      rel="alternate"
-      hreflang="en-us"
-      href="https://blog.janlwrobel.it/career/"
-    />
-  </url>
-  <url>
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/career/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/categories/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/categories/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/helpdesk/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/tags/helpdesk/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/tags/helpdesk/"
+                />
+  </url><url>
     <loc>https://blog.janlwrobel.it/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
-      rel="alternate"
-      hreflang="pl-pl"
-      href="https://blog.janlwrobel.it/pl/"
-    />
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/"
+                />
     <xhtml:link
-      rel="alternate"
-      hreflang="en-us"
-      href="https://blog.janlwrobel.it/"
-    />
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/homelab/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/tags/homelab/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/tags/homelab/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/it/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/tags/it/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/tags/it/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/tags/"
+                />
   </url>
 </urlset>
