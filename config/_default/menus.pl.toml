@@ -1,0 +1,14 @@
+[[main]]
+name = 'Strona glowna'
+pageRef = '/'
+weight = 10
+
+[[main]]
+name = 'O mnie'
+pageRef = '/about/'
+weight = 20
+
+[[main]]
+name = 'Kariera'
+pageRef = '/career/'
+weight = 30

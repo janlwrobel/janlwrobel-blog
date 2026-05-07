@@ -1,0 +1,32 @@
+baseURL = 'https://blog.janlwrobel.it/'
+locale = 'en-us'
+title = 'Jan Lukasz Wrobel'
+theme = 'blowfish'
+
+[taxonomies]
+category = 'categories'
+tag = 'tags'
+
+[params]
+description = 'Real IT from the trenches'
+
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+
+[languages]
+
+[languages.en]
+languageName = 'English'
+languageCode = 'en'
+weight = 1
+
+[languages.en.params]
+displayName = 'EN'
+
+[languages.pl]
+languageName = 'Polski'
+languageCode = 'pl'
+weight = 2
+
+[languages.pl.params]
+displayName = 'PL'
