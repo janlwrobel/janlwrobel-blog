@@ -12,3 +12,8 @@ weight = 20
 name = 'Career'
 pageRef = '/career/'
 weight = 30
+
+[[main]]
+name = 'Microsoft365'
+url = '/categories/microsoft-365/'
+weight = 40

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="dark">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>PowerShell Scripts: When Online Archive Hits the 100 GB Wall | Jan Lukasz Wrobel</title>
+<meta name="keywords" content="Microsoft365, Exchange-Online, PowerShell, Online-Archive, Troubleshooting">
+<meta name="description" content="How to enable auto-expanding archive in Exchange Online when Online Archive starts hitting storage limits.">
+<meta name="author" content="Jan Wróbel">
+<link rel="canonical" href="https://blog.janlwrobel.it/powershell/online-archive-100gb-wall/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a1a1b118b3e83435265dc39da18e54244bcc0e5481d1d034aadc0c899c51e15c.css" integrity="sha256-oaGxGLPoNDUmXcOdoY5UJEvMDlSB0dA0qtwMiZxR4Vw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://blog.janlwrobel.it/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blog.janlwrobel.it/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.janlwrobel.it/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blog.janlwrobel.it/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blog.janlwrobel.it/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://blog.janlwrobel.it/powershell/online-archive-100gb-wall/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://blog.janlwrobel.it/powershell/online-archive-100gb-wall/">
+  <meta property="og:site_name" content="Jan Lukasz Wrobel">
+  <meta property="og:title" content="PowerShell Scripts: When Online Archive Hits the 100 GB Wall">
+  <meta property="og:description" content="How to enable auto-expanding archive in Exchange Online when Online Archive starts hitting storage limits.">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="powershell">
+    <meta property="article:published_time" content="2026-05-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-08T00:00:00+00:00">
+    <meta property="article:tag" content="Microsoft365">
+    <meta property="article:tag" content="Exchange-Online">
+    <meta property="article:tag" content="PowerShell">
+    <meta property="article:tag" content="Online-Archive">
+    <meta property="article:tag" content="Troubleshooting">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PowerShell Scripts: When Online Archive Hits the 100 GB Wall">
+  <meta name="twitter:description" content="How to enable auto-expanding archive in Exchange Online when Online Archive starts hitting storage limits.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Powershells",
+      "item": "https://blog.janlwrobel.it/powershell/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "PowerShell Scripts: When Online Archive Hits the 100 GB Wall",
+      "item": "https://blog.janlwrobel.it/powershell/online-archive-100gb-wall/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PowerShell Scripts: When Online Archive Hits the 100 GB Wall",
+  "name": "PowerShell Scripts: When Online Archive Hits the 100 GB Wall",
+  "description": "How to enable auto-expanding archive in Exchange Online when Online Archive starts hitting storage limits.",
+  "keywords": [
+    "Microsoft365", "Exchange-Online", "PowerShell", "Online-Archive", "Troubleshooting"
+  ],
+  "articleBody": "Quick Fix User screaming that mailbox is full?\nCheck this first: Jump to TL;DR\nGet-Mailbox \"user@domain.com\" | FL AutoExpandingArchiveEnabled Enable-Mailbox \"user@domain.com\" -AutoExpandingArchive``` Full explanation below.\nProblem A user’s Online Archive was approaching the standard archive limit.\nIn Exchange Online, archive mailboxes normally provide up to 100 GB of storage. After that, Microsoft can automatically extend the archive using auto-expanding archiving.\nThe problem is:\nmost users have absolutely no idea what Online Archive even is until it breaks.\nAnd most admins only remember this feature exists when someone suddenly opens a ticket saying:\n“My mailbox is full.”\nSymptoms The user may report things like:\nOnline Archive looks full Emails are not moving into archive as expected Archive cleanup stops helping Mailbox/archive quota warnings Outlook performance gets worse because old mail is not moving properly Users receive scary Microsoft 365 emails saying the archive is full and immediately open a high-priority ticket Users report that “their mailbox is full”, even though the real problem is the Online Archive quota Users usually have no idea what Online Archive even is, because Outlook hides most of the complexity Root Cause The Online Archive mailbox hit the normal storage wall.\nBy default, Exchange Online archive mailboxes have limits.\nTo go beyond that, auto-expanding archive must be enabled.\nThis feature automatically adds extra archive storage behind the scenes when Microsoft detects that the archive is approaching capacity.\nAccording to Microsoft documentation, archive storage can grow up to 1.5 TB.\nWhat Happened on the Ticket Step 1 — Connected to Exchange Online Opened PowerShell and connected to Exchange Online:\nConnect-ExchangeOnline This opened the Microsoft login window.\nAfter entering admin credentials, Microsoft displayed another prompt asking:\n“Sign in to all apps and websites on this device?”\nUnless you intentionally want to add the admin account to your Windows profile, always select:\nNo, this app only\nOtherwise, Windows may start attaching the admin Microsoft 365 account to your local machine, which can later create:\nOffice login confusion OneDrive sync problems SharePoint credential issues Unwanted device registration in Entra ID Admin account appearing inside Windows account settings For daily admin workstations: always use “No, this app only”.\nAfter signing in successfully, the Exchange Online V3 module loaded normally.\nThe console displayed information about REST-backed cmdlets and EXO V3.\nThat confirmed the session was connected properly.\nStep 2 — Checked Organisation-Level Setting First, checked whether auto-expanding archive was enabled globally:\nGet-OrganizationConfig | FL AutoExpandingArchiveEnabled Result:\nAutoExpandingArchiveEnabled : True So the tenant-level setting was already enabled.\nImportant detail:\nMicrosoft documentation mentions that enabling it globally does not automatically change the mailbox property to True on every mailbox.\nThis confuses many admins the first time they check it.\nStep 3 — Checked the User Mailbox Checked mailbox-level status:\nGet-Mailbox \"user@domain.com\" | FL AutoExpandingArchiveEnabled Result:\nAutoExpandingArchiveEnabled : False So organisation-level setting was enabled, but the mailbox itself still showed False.\nStep 4 — Enabled Auto-Expanding Archive Enabled the feature for the mailbox:\nEnable-Mailbox \"user@domain.com\" -AutoExpandingArchive Exchange returned mailbox information, confirming the command completed successfully.\nStep 5 — Verified Configuration Checked organisation configuration again:\nGet-OrganizationConfig | FL AutoExpandingArchiveEnabled Result:\nAutoExpandingArchiveEnabled : True At this point, the configuration was complete.\nUseful Commands Connect to Exchange Online\nConnect-ExchangeOnline Check organisation-level setting\nGet-OrganizationConfig | FL AutoExpandingArchiveEnabled Check mailbox setting\nGet-Mailbox \"user@domain.com\" | FL AutoExpandingArchiveEnabled Enable auto-expanding archive\nEnable-Mailbox \"user@domain.com\" -AutoExpandingArchive Check archive quota and status\nGet-Mailbox \"user@domain.com\" | FL DisplayName,ArchiveStatus,ArchiveQuota,ArchiveWarningQuota,AutoExpandingArchiveEnabled What Can Go Wrong It is not instant Users often expect the archive size to increase immediately.\nThat is not how this works.\nMicrosoft may take time to provision additional archive storage.\nIn some cases, it can take days before changes become visible.\nYou cannot disable it later Once auto-expanding archive is enabled, it cannot be disabled afterwards.\nThis is not a temporary switch.\nOutlook search can confuse users Search inside expanded archives is not always intuitive.\nUsers may think emails disappeared, while Outlook is simply searching the wrong scope.\nClassic Outlook especially likes turning this into another helpdesk ticket.\nArchive folders may move automatically Microsoft can split archive content across additional storage locations automatically.\nThis can slightly change how archive folders appear inside Outlook.\nUsually harmless.\nStill enough to scare users.\nNot designed for mailbox dumping Microsoft specifically says this feature is not intended for dumping massive amounts of mail into a single archive mailbox through journaling or transport rules.\nPros and Cons Pros\nAllows archive growth beyond 100 GB Can scale automatically up to 1.5 TB No manual archive expansion needed later Works well for long-term email retention Cons\nCannot be disabled later Expansion is not immediate Outlook search behaviour can become messy Users often panic when folder structure changes slightly References Microsoft documentation:\nAuto-expanding archiving overview Enable auto-expanding archiving TL;DR User reported mailbox/archive issues because Online Archive was approaching its storage limit.\nConnected to Exchange Online PowerShell and verified:\nGet-OrganizationConfig | FL AutoExpandingArchiveEnabled Then enabled auto-expanding archive for the mailbox:\nEnable-Mailbox \"user@domain.com\" -AutoExpandingArchive The archive can now grow automatically beyond the normal 100 GB limit.\nJust do not expect it to happen instantly.\n",
+  "wordCount" : "838",
+  "inLanguage": "en",
+  "datePublished": "2026-05-08T00:00:00Z",
+  "dateModified": "2026-05-08T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Jan Wróbel"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.janlwrobel.it/powershell/online-archive-100gb-wall/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jan Lukasz Wrobel",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.janlwrobel.it/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://blog.janlwrobel.it/" accesskey="h" title="Jan Lukasz Wrobel (Alt + H)">Jan Lukasz Wrobel</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://blog.janlwrobel.it/pl/" title="🇵🇱 Polski"
+                                aria-label="🇵🇱 Polski">Pl</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://blog.janlwrobel.it/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.janlwrobel.it/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.janlwrobel.it/career/" title="Careers">
+                    <span>Career</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.janlwrobel.it/categories/microsoft-365/" title="Microsoft365">
+                    <span>Microsoft365</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/powershell/">Powershells</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      PowerShell Scripts: When Online Archive Hits the 100 GB Wall
+    </h1>
+    <div class="post-description">
+      How to enable auto-expanding archive in Exchange Online when Online Archive starts hitting storage limits.
+    </div>
+    <div class="post-meta">
+
+<span title='2026-05-08 00:00:00 +0000 UTC'>8 May 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>838 words</span>&nbsp;·&nbsp;<span>Jan Wróbel</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h2 id="quick-fix">Quick Fix<a hidden class="anchor" aria-hidden="true" href="#quick-fix">#</a></h2>
+<p>User screaming that mailbox is full?</p>
+<p>Check this first: <a href="/powershell/online-archive-100gb-wall/#tldr">Jump to TL;DR</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-Mailbox <span style="color:#e6db74">&#34;user@domain.com&#34;</span> | FL AutoExpandingArchiveEnabled
+</span></span><span style="display:flex;"><span>Enable-Mailbox <span style="color:#e6db74">&#34;user@domain.com&#34;</span> -AutoExpandingArchive```
+</span></span></code></pre></div><p>Full explanation below.</p>
+<h2 id="problem">Problem<a hidden class="anchor" aria-hidden="true" href="#problem">#</a></h2>
+<p>A user&rsquo;s Online Archive was approaching the standard archive limit.</p>
+<p>In Exchange Online, archive mailboxes normally provide up to 100 GB of storage. After that, Microsoft can automatically extend the archive using auto-expanding archiving.</p>
+<p>The problem is:</p>
+<blockquote>
+<p>most users have absolutely no idea what Online Archive even is until it breaks.</p>
+</blockquote>
+<p>And most admins only remember this feature exists when someone suddenly opens a ticket saying:</p>
+<blockquote>
+<p>&ldquo;My mailbox is full.&rdquo;</p>
+</blockquote>
+<hr>
+<h2 id="symptoms">Symptoms<a hidden class="anchor" aria-hidden="true" href="#symptoms">#</a></h2>
+<p>The user may report things like:</p>
+<ul>
+<li>Online Archive looks full</li>
+<li>Emails are not moving into archive as expected</li>
+<li>Archive cleanup stops helping</li>
+<li>Mailbox/archive quota warnings</li>
+<li>Outlook performance gets worse because old mail is not moving properly</li>
+<li>Users receive scary Microsoft 365 emails saying the archive is full and immediately open a high-priority ticket</li>
+<li>Users report that &ldquo;their mailbox is full&rdquo;, even though the real problem is the Online Archive quota</li>
+<li>Users usually have no idea what Online Archive even is, because Outlook hides most of the complexity</li>
+</ul>
+<hr>
+<h2 id="root-cause">Root Cause<a hidden class="anchor" aria-hidden="true" href="#root-cause">#</a></h2>
+<p>The Online Archive mailbox hit the normal storage wall.</p>
+<p>By default, Exchange Online archive mailboxes have limits.</p>
+<p>To go beyond that, auto-expanding archive must be enabled.</p>
+<p>This feature automatically adds extra archive storage behind the scenes when Microsoft detects that the archive is approaching capacity.</p>
+<p>According to Microsoft documentation, archive storage can grow up to 1.5 TB.</p>
+<hr>
+<h2 id="what-happened-on-the-ticket">What Happened on the Ticket<a hidden class="anchor" aria-hidden="true" href="#what-happened-on-the-ticket">#</a></h2>
+<h3 id="step-1--connected-to-exchange-online">Step 1 — Connected to Exchange Online<a hidden class="anchor" aria-hidden="true" href="#step-1--connected-to-exchange-online">#</a></h3>
+<p>Opened PowerShell and connected to Exchange Online:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Connect-ExchangeOnline
+</span></span></code></pre></div><p>This opened the Microsoft login window.</p>
+<p>After entering admin credentials, Microsoft displayed another prompt asking:</p>
+<blockquote>
+<p>&ldquo;Sign in to all apps and websites on this device?&rdquo;</p>
+</blockquote>
+<p>Unless you intentionally want to add the admin account to your Windows profile, always select:</p>
+<blockquote>
+<p><strong>No, this app only</strong></p>
+</blockquote>
+<p>Otherwise, Windows may start attaching the admin Microsoft 365 account to your local machine, which can later create:</p>
+<ul>
+<li>Office login confusion</li>
+<li>OneDrive sync problems</li>
+<li>SharePoint credential issues</li>
+<li>Unwanted device registration in Entra ID</li>
+<li>Admin account appearing inside Windows account settings</li>
+</ul>
+<p>For daily admin workstations: always use <strong>&ldquo;No, this app only&rdquo;</strong>.</p>
+<p>After signing in successfully, the Exchange Online V3 module loaded normally.</p>
+<p>The console displayed information about REST-backed cmdlets and EXO V3.</p>
+<p>That confirmed the session was connected properly.</p>
+<h3 id="step-2--checked-organisation-level-setting">Step 2 — Checked Organisation-Level Setting<a hidden class="anchor" aria-hidden="true" href="#step-2--checked-organisation-level-setting">#</a></h3>
+<p>First, checked whether auto-expanding archive was enabled globally:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-OrganizationConfig | FL AutoExpandingArchiveEnabled
+</span></span></code></pre></div><p>Result:</p>
+<pre tabindex="0"><code>AutoExpandingArchiveEnabled : True
+</code></pre><p>So the tenant-level setting was already enabled.</p>
+<p><strong>Important detail:</strong></p>
+<p>Microsoft documentation mentions that enabling it globally does not automatically change the mailbox property to <code>True</code> on every mailbox.</p>
+<p>This confuses many admins the first time they check it.</p>
+<h3 id="step-3--checked-the-user-mailbox">Step 3 — Checked the User Mailbox<a hidden class="anchor" aria-hidden="true" href="#step-3--checked-the-user-mailbox">#</a></h3>
+<p>Checked mailbox-level status:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-Mailbox <span style="color:#e6db74">&#34;user@domain.com&#34;</span> | FL AutoExpandingArchiveEnabled
+</span></span></code></pre></div><p>Result:</p>
+<pre tabindex="0"><code>AutoExpandingArchiveEnabled : False
+</code></pre><p>So organisation-level setting was enabled, but the mailbox itself still showed <code>False</code>.</p>
+<h3 id="step-4--enabled-auto-expanding-archive">Step 4 — Enabled Auto-Expanding Archive<a hidden class="anchor" aria-hidden="true" href="#step-4--enabled-auto-expanding-archive">#</a></h3>
+<p>Enabled the feature for the mailbox:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Enable-Mailbox <span style="color:#e6db74">&#34;user@domain.com&#34;</span> -AutoExpandingArchive
+</span></span></code></pre></div><p>Exchange returned mailbox information, confirming the command completed successfully.</p>
+<h3 id="step-5--verified-configuration">Step 5 — Verified Configuration<a hidden class="anchor" aria-hidden="true" href="#step-5--verified-configuration">#</a></h3>
+<p>Checked organisation configuration again:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-OrganizationConfig | FL AutoExpandingArchiveEnabled
+</span></span></code></pre></div><p>Result:</p>
+<pre tabindex="0"><code>AutoExpandingArchiveEnabled : True
+</code></pre><p>At this point, the configuration was complete.</p>
+<hr>
+<h2 id="useful-commands">Useful Commands<a hidden class="anchor" aria-hidden="true" href="#useful-commands">#</a></h2>
+<p><strong>Connect to Exchange Online</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Connect-ExchangeOnline
+</span></span></code></pre></div><p><strong>Check organisation-level setting</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-OrganizationConfig | FL AutoExpandingArchiveEnabled
+</span></span></code></pre></div><p><strong>Check mailbox setting</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-Mailbox <span style="color:#e6db74">&#34;user@domain.com&#34;</span> | FL AutoExpandingArchiveEnabled
+</span></span></code></pre></div><p><strong>Enable auto-expanding archive</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Enable-Mailbox <span style="color:#e6db74">&#34;user@domain.com&#34;</span> -AutoExpandingArchive
+</span></span></code></pre></div><p><strong>Check archive quota and status</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-Mailbox <span style="color:#e6db74">&#34;user@domain.com&#34;</span> | FL DisplayName,ArchiveStatus,ArchiveQuota,ArchiveWarningQuota,AutoExpandingArchiveEnabled
+</span></span></code></pre></div><hr>
+<h2 id="what-can-go-wrong">What Can Go Wrong<a hidden class="anchor" aria-hidden="true" href="#what-can-go-wrong">#</a></h2>
+<h3 id="it-is-not-instant">It is not instant<a hidden class="anchor" aria-hidden="true" href="#it-is-not-instant">#</a></h3>
+<p>Users often expect the archive size to increase immediately.</p>
+<p>That is not how this works.</p>
+<p>Microsoft may take time to provision additional archive storage.</p>
+<p>In some cases, it can take days before changes become visible.</p>
+<h3 id="you-cannot-disable-it-later">You cannot disable it later<a hidden class="anchor" aria-hidden="true" href="#you-cannot-disable-it-later">#</a></h3>
+<p>Once auto-expanding archive is enabled, it cannot be disabled afterwards.</p>
+<p>This is not a temporary switch.</p>
+<h3 id="outlook-search-can-confuse-users">Outlook search can confuse users<a hidden class="anchor" aria-hidden="true" href="#outlook-search-can-confuse-users">#</a></h3>
+<p>Search inside expanded archives is not always intuitive.</p>
+<p>Users may think emails disappeared, while Outlook is simply searching the wrong scope.</p>
+<p>Classic Outlook especially likes turning this into another helpdesk ticket.</p>
+<h3 id="archive-folders-may-move-automatically">Archive folders may move automatically<a hidden class="anchor" aria-hidden="true" href="#archive-folders-may-move-automatically">#</a></h3>
+<p>Microsoft can split archive content across additional storage locations automatically.</p>
+<p>This can slightly change how archive folders appear inside Outlook.</p>
+<p>Usually harmless.</p>
+<p>Still enough to scare users.</p>
+<h3 id="not-designed-for-mailbox-dumping">Not designed for mailbox dumping<a hidden class="anchor" aria-hidden="true" href="#not-designed-for-mailbox-dumping">#</a></h3>
+<p>Microsoft specifically says this feature is not intended for dumping massive amounts of mail into a single archive mailbox through journaling or transport rules.</p>
+<hr>
+<h2 id="pros-and-cons">Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#pros-and-cons">#</a></h2>
+<p><strong>Pros</strong></p>
+<ul>
+<li>Allows archive growth beyond 100 GB</li>
+<li>Can scale automatically up to 1.5 TB</li>
+<li>No manual archive expansion needed later</li>
+<li>Works well for long-term email retention</li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul>
+<li>Cannot be disabled later</li>
+<li>Expansion is not immediate</li>
+<li>Outlook search behaviour can become messy</li>
+<li>Users often panic when folder structure changes slightly</li>
+</ul>
+<hr>
+<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<p>Microsoft documentation:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/purview/autoexpanding-archiving">Auto-expanding archiving overview</a></li>
+<li><a href="https://learn.microsoft.com/en-us/purview/enable-autoexpanding-archiving">Enable auto-expanding archiving</a></li>
+</ul>
+<hr>
+<h2 id="tldr">TL;DR<a hidden class="anchor" aria-hidden="true" href="#tldr">#</a></h2>
+<p>User reported mailbox/archive issues because Online Archive was approaching its storage limit.</p>
+<p>Connected to Exchange Online PowerShell and verified:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-OrganizationConfig | FL AutoExpandingArchiveEnabled
+</span></span></code></pre></div><p>Then enabled auto-expanding archive for the mailbox:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Enable-Mailbox <span style="color:#e6db74">&#34;user@domain.com&#34;</span> -AutoExpandingArchive
+</span></span></code></pre></div><p>The archive can now grow automatically beyond the normal 100 GB limit.</p>
+<p>Just do not expect it to happen instantly.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blog.janlwrobel.it/tags/microsoft365/">Microsoft365</a></li>
+      <li><a href="https://blog.janlwrobel.it/tags/exchange-online/">Exchange-Online</a></li>
+      <li><a href="https://blog.janlwrobel.it/tags/powershell/">PowerShell</a></li>
+      <li><a href="https://blog.janlwrobel.it/tags/online-archive/">Online-Archive</a></li>
+      <li><a href="https://blog.janlwrobel.it/tags/troubleshooting/">Troubleshooting</a></li>
+    </ul>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share PowerShell Scripts: When Online Archive Hits the 100 GB Wall on x"
+            href="https://x.com/intent/tweet/?text=PowerShell%20Scripts%3a%20When%20Online%20Archive%20Hits%20the%20100%20GB%20Wall&amp;url=https%3a%2f%2fblog.janlwrobel.it%2fpowershell%2fonline-archive-100gb-wall%2f&amp;hashtags=Microsoft365%2cExchange-Online%2cPowerShell%2cOnline-Archive%2cTroubleshooting">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share PowerShell Scripts: When Online Archive Hits the 100 GB Wall on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fblog.janlwrobel.it%2fpowershell%2fonline-archive-100gb-wall%2f&amp;title=PowerShell%20Scripts%3a%20When%20Online%20Archive%20Hits%20the%20100%20GB%20Wall&amp;summary=PowerShell%20Scripts%3a%20When%20Online%20Archive%20Hits%20the%20100%20GB%20Wall&amp;source=https%3a%2f%2fblog.janlwrobel.it%2fpowershell%2fonline-archive-100gb-wall%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share PowerShell Scripts: When Online Archive Hits the 100 GB Wall on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fblog.janlwrobel.it%2fpowershell%2fonline-archive-100gb-wall%2f&title=PowerShell%20Scripts%3a%20When%20Online%20Archive%20Hits%20the%20100%20GB%20Wall">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share PowerShell Scripts: When Online Archive Hits the 100 GB Wall on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.janlwrobel.it%2fpowershell%2fonline-archive-100gb-wall%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share PowerShell Scripts: When Online Archive Hits the 100 GB Wall on whatsapp"
+            href="https://api.whatsapp.com/send?text=PowerShell%20Scripts%3a%20When%20Online%20Archive%20Hits%20the%20100%20GB%20Wall%20-%20https%3a%2f%2fblog.janlwrobel.it%2fpowershell%2fonline-archive-100gb-wall%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share PowerShell Scripts: When Online Archive Hits the 100 GB Wall on telegram"
+            href="https://telegram.me/share/url?text=PowerShell%20Scripts%3a%20When%20Online%20Archive%20Hits%20the%20100%20GB%20Wall&amp;url=https%3a%2f%2fblog.janlwrobel.it%2fpowershell%2fonline-archive-100gb-wall%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share PowerShell Scripts: When Online Archive Hits the 100 GB Wall on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=PowerShell%20Scripts%3a%20When%20Online%20Archive%20Hits%20the%20100%20GB%20Wall&u=https%3a%2f%2fblog.janlwrobel.it%2fpowershell%2fonline-archive-100gb-wall%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://blog.janlwrobel.it/">Jan Lukasz Wrobel</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
