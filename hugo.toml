@@ -1,4 +1,4 @@
-baseURL = 'https://janlwrobel-blog.pages.dev/'
+baseURL = 'https://blog.janlwrobel.it/'
 locale = 'en-us'
 title = 'Jan Lukasz Wrobel'
 theme = "PaperMod"
