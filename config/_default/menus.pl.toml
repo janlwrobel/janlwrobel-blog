@@ -1,16 +1,16 @@
 [[main]]
 name = 'Strona glowna'
-pageRef = '/'
+url = '/'
 weight = 10
 
 [[main]]
 name = 'O mnie'
-pageRef = '/about/'
+url = '/about/'
 weight = 20
 
 [[main]]
 name = 'Kariera'
-pageRef = '/career/'
+url = '/career/'
 weight = 30
 
 
