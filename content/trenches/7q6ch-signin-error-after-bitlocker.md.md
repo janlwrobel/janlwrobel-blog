@@ -100,7 +100,13 @@ Dell Update history showed that a BIOS update together with multiple chipset and
 
 ![DellCommand_logs](/images/trenches/7q6ch-signin-error-after-bitlocker2.png)
 
-Windows also displayed a Secure Boot certificate warning.
+Windows also displayed a Secure Boot related warning in Event Viewer:  
+  
+```text  
+Updated Secure Boot certificates are available on this device but have not yet been applied to the firmware.
+  
+FirmwareVersion:1.21.0
+```
 
 Most likely scenario:
 
