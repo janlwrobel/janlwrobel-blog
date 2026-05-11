@@ -2,7 +2,7 @@
 title: "Home"
 description: "Real IT troubleshooting and homelab content"
 ---
-
+![IT from Trenches](/images/trenches-banner.jpg)
 # Real IT from the Trenches
 
 I went from mechanical engineering and factory work to IT support, homelabs, scripting, and infrastructure.

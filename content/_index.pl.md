@@ -2,7 +2,7 @@
 title: "Start"
 description: "Prawdziwe problemy IT i homelab"
 ---
-
+![IT from Trenches](/images/trenches-banner.jpg)
 # Prawdziwe IT z Okopów
 
 Przeszedłem drogę od mechaniki i pracy na produkcji do IT supportu, homelabów, skryptów i infrastruktury.

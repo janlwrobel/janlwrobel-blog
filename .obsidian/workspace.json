@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/powershell/online-archive-100gb-wall.md",
+                "file": "content/_index.en.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "online-archive-100gb-wall"
+              "title": "_index.en"
             }
           }
         ]
@@ -183,23 +183,31 @@
   },
   "active": "6accfc3cde86fab5",
   "lastOpenFiles": [
-    "public/pl/tags/przebranżowienie/page/1/index.html",
-    "public/pl/tags/kariera/page/1/index.html",
-    "public/pl/tags/it/page/1/index.html",
-    "public/pl/tags/homelab/page/1/index.html",
-    "public/pl/tags/helpdesk/page/1/index.html",
-    "public/pl/categories/career/page/1/index.html",
-    "public/pl/tags/przebranżowienie/page/1",
-    "public/pl/tags/kariera/page/1",
-    "public/pl/tags/it/page/1",
-    "public/pl/tags/homelab/page/1",
-    "public/pl/tags/helpdesk/page/1",
     "content/_index.pl.md",
+    "public/tags/bitlocker/index.xml",
+    "public/tags/azuread/index.xml",
+    "public/tags/authentication/index.xml",
+    "public/tags/7q6ch/index.xml",
+    "public/categories/trenches/index.xml",
+    "public/trenches/page/1/index.html",
+    "public/trenches/page/1",
+    "public/trenches/7q6ch-signin-error-after-bitlocker.md/index.html",
+    "public/trenches/page",
+    "public/trenches/index.xml",
+    "public/trenches/7q6ch-signin-error-after-bitlocker.md",
+    "public/images/trenches-banner.jpg",
+    "public/images/trenches/Screenshot 2026-05-11 113412.png",
+    "public/images/trenches/Screenshot 2026-05-11 113605.png",
+    "public/images/trenches/Screenshot 2026-05-11 113424.png",
+    "public/images/trenches/Screenshot 2026-05-11 113402.png",
+    "public/images/trenches/Screenshot 2026-05-11 113329.png",
+    "content/_index.en.md",
+    "static/images/trenches-banner.jpg",
+    "static/images/it-from-trenches.jpg",
     "content/powershell/online-archive-100gb-wall.md",
     "themes/PaperMod/images/tn.png",
     "themes/PaperMod/images/screenshot.png",
     "themes/PaperMod/README.md",
-    "content/_index.en.md",
     "content/about/_index.en.md",
     "content/about/_index.pl.md",
     "about.md",

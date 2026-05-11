@@ -6,8 +6,15 @@
     <description>Recent content in Microsoft365 on Jan Lukasz Wrobel</description>
     <generator>Hugo</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.janlwrobel.it/tags/microsoft365/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BitLocker Recovery, 7q6ch, and Broken Microsoft 365 Sign-In</title>
+      <link>https://blog.janlwrobel.it/trenches/7q6ch-signin-error-after-bitlocker.md/</link>
+      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://blog.janlwrobel.it/trenches/7q6ch-signin-error-after-bitlocker.md/</guid>
+      <description>How a Dell BIOS update and BitLocker recovery event broke Microsoft 365 authentication on a Windows device.</description>
+    </item>
     <item>
       <title>PowerShell Scripts: When Online Archive Hits the 100 GB Wall</title>
       <link>https://blog.janlwrobel.it/powershell/online-archive-100gb-wall/</link>
