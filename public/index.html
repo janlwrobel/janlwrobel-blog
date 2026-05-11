@@ -112,6 +112,11 @@
                 </a>
             </li>
             <li>
+                <a href="https://blog.janlwrobel.it/categories/trenches/" title="Trenches">
+                    <span>Trenches</span>
+                </a>
+            </li>
+            <li>
                 <a href="https://blog.janlwrobel.it/categories/microsoft-365/" title="Microsoft365">
                     <span>Microsoft365</span>
                 </a>
@@ -132,23 +137,24 @@
 </div>
 
 <article class="first-entry"> 
-<figure class="entry-cover">
-        <img loading="lazy" src="https://blog.janlwrobel.it/images/hello-world-cover.jpg" alt="Homelab and IT career transition">
-</figure>
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Career Switch #001 - Hello World
+    <h2 class="entry-hint-parent">PowerShell Scripts: When Online Archive Hits the 100 GB Wall
     </h2>
   </header>
   <div class="entry-content">
-    <p>Hello World: My Journey to Switching Careers into IT From Manufacturing to IT Support A few years ago, I was assembling aircraft seats and working in quality control for medical equipment.
-Today I work as an IT Support Engineer, troubleshooting Microsoft 365 issues, Outlook failures, OneDrive sync problems, printers that refuse to print five minutes before meetings, and all the other chaos that comes with real-world IT.
-This is the story of how I got here.
+    <p>Quick Fix User screaming that mailbox is full?
+Check this first: Jump to TL;DR
+Get-Mailbox &#34;user@domain.com&#34; | FL AutoExpandingArchiveEnabled Enable-Mailbox &#34;user@domain.com&#34; -AutoExpandingArchive``` Full explanation below.
+Problem A user’s Online Archive was approaching the standard archive limit.
+In Exchange Online, archive mailboxes normally provide up to 100 GB of storage. After that, Microsoft can automatically extend the archive using auto-expanding archiving.
+The problem is:
+most users have absolutely no idea what Online Archive even is until it breaks.
 ...</p>
   </div>
   <footer class="entry-footer">
 
-<span title='2026-05-07 00:00:00 +0000 UTC'>7 May 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>929 words</span>&nbsp;·&nbsp;<span>Jan Wróbel</span></footer>
-  <a class="entry-link" aria-label="post link to Career Switch #001 - Hello World" href="https://blog.janlwrobel.it/career/hello-world-career-switch/"></a>
+<span title='2026-05-08 00:00:00 +0000 UTC'>8 May 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>838 words</span>&nbsp;·&nbsp;<span>Jan Wróbel</span></footer>
+  <a class="entry-link" aria-label="post link to PowerShell Scripts: When Online Archive Hits the 100 GB Wall" href="https://blog.janlwrobel.it/powershell/online-archive-100gb-wall/"></a>
 </article>
     </main>
     

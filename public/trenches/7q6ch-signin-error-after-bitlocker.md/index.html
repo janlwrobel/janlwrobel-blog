@@ -159,6 +159,11 @@
                 </a>
             </li>
             <li>
+                <a href="https://blog.janlwrobel.it/categories/trenches/" title="Trenches">
+                    <span>Trenches</span>
+                </a>
+            </li>
+            <li>
                 <a href="https://blog.janlwrobel.it/categories/microsoft-365/" title="Microsoft365">
                     <span>Microsoft365</span>
                 </a>
@@ -202,6 +207,7 @@
 <p>The issue was resolved by re-authenticating the Work or School account after signing back into Windows using the <code>Other user</code> option.</p>
 <hr>
 <h2 id="the-symptoms">The Symptoms<a hidden class="anchor" aria-hidden="true" href="#the-symptoms">#</a></h2>
+<p><img alt="7q6ch" loading="lazy" src="/images/trenches/7q6ch-signin-error-after-bitlocker1.png"></p>
 <p>User reported:</p>
 <ul>
 <li>signed out from Outlook, Teams, and Office</li>
@@ -220,19 +226,22 @@
 <li>TPM healthy</li>
 <li>TPM ready for use</li>
 </ul>
+<p><img alt="TPM" loading="lazy" src="/images/trenches/7q6ch-signin-error-after-bitlocker4.png"></p>
 <p>Entra/Azure AD device registration was then verified:</p>
 <pre tabindex="0"><code>dsregcmd /status
 </code></pre><p>Important values:</p>
 <pre tabindex="0"><code>AzureAdJoined : YES
 DeviceAuthStatus : SUCCESS
 TpmProtected : YES
-</code></pre><p>The device itself still appeared healthy and trusted.</p>
+</code></pre><p><img alt="Entra/Azure AD" loading="lazy" src="/images/trenches/7q6ch-signin-error-after-bitlocker3.png"></p>
+<p>The device itself still appeared healthy and trusted.</p>
 <p>Credential Manager was also checked, but no Microsoft or Azure AD credentials were present.</p>
 <p>The machine initially still appeared connected under:</p>
 <pre tabindex="0"><code>Settings → Accounts → Access work or school
 </code></pre><hr>
 <h2 id="possible-cause">Possible Cause<a hidden class="anchor" aria-hidden="true" href="#possible-cause">#</a></h2>
 <p>Dell Update history showed that a BIOS update together with multiple chipset and driver updates had installed several days earlier.</p>
+<p><img alt="DellCommand_logs" loading="lazy" src="/images/trenches/7q6ch-signin-error-after-bitlocker2.png"></p>
 <p>Windows also displayed a Secure Boot certificate warning.</p>
 <p>Most likely scenario:</p>
 <ul>

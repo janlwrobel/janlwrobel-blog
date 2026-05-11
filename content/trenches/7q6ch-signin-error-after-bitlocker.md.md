@@ -36,6 +36,8 @@ The issue was resolved by re-authenticating the Work or School account after sig
 
 ## The Symptoms
 
+![7q6ch](/images/trenches/7q6ch-signin-error-after-bitlocker1.png)
+
 User reported:
 
 - signed out from Outlook, Teams, and Office
@@ -62,6 +64,8 @@ Result:
 - TPM healthy
 - TPM ready for use
 
+![TPM](/images/trenches/7q6ch-signin-error-after-bitlocker4.png)
+
 Entra/Azure AD device registration was then verified:
 
 ```
@@ -75,6 +79,8 @@ AzureAdJoined : YES
 DeviceAuthStatus : SUCCESS
 TpmProtected : YES
 ```
+
+![Entra/Azure AD](/images/trenches/7q6ch-signin-error-after-bitlocker3.png)
 
 The device itself still appeared healthy and trusted.
 
@@ -91,6 +97,8 @@ Settings → Accounts → Access work or school
 ## Possible Cause
 
 Dell Update history showed that a BIOS update together with multiple chipset and driver updates had installed several days earlier.
+
+![DellCommand_logs](/images/trenches/7q6ch-signin-error-after-bitlocker2.png)
 
 Windows also displayed a Secure Boot certificate warning.
 
