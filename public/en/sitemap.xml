@@ -2,6 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.janlwrobel.it/categories/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/categories/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/cloudflare/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.janlwrobel.it/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/jumpcloud/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/keychain/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/macos/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/microsoft365/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/outlook/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.janlwrobel.it/trenches/macos-trenches-keychain-fix/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/tags/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/teams/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.janlwrobel.it/categories/trenches/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.janlwrobel.it/trenches/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/troubleshooting/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.janlwrobel.it/tags/7q6ch/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -17,64 +89,7 @@
     <loc>https://blog.janlwrobel.it/trenches/7q6ch-signin-error-after-bitlocker.md/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.janlwrobel.it/categories/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-gb"
-                href="https://blog.janlwrobel.it/categories/"
-                />
-  </url><url>
     <loc>https://blog.janlwrobel.it/tags/entraid/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.janlwrobel.it/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-gb"
-                href="https://blog.janlwrobel.it/"
-                />
-  </url><url>
-    <loc>https://blog.janlwrobel.it/tags/microsoft365/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.janlwrobel.it/tags/outlook/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.janlwrobel.it/tags/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-gb"
-                href="https://blog.janlwrobel.it/tags/"
-                />
-  </url><url>
-    <loc>https://blog.janlwrobel.it/tags/teams/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.janlwrobel.it/categories/trenches/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.janlwrobel.it/trenches/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.janlwrobel.it/tags/troubleshooting/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.janlwrobel.it/tags/exchange-online/</loc>
