@@ -183,8 +183,9 @@
   },
   "active": "6accfc3cde86fab5",
   "lastOpenFiles": [
-    "public/images/hello-world-cover.jpg",
     "static/images/hello-world-cover.jpg",
+    "static/images/hello-world-cover1.jpg",
+    "public/images/hello-world-cover.jpg",
     "content/trenches/7q6ch-signin-error-after-bitlocker.md.md",
     "content/career/hello-world-career-switch.en.md",
     "images/hello-world-cover.jpg",
@@ -208,7 +209,6 @@
     "public/images/trenches/7q6ch-signin-error-after-bitlocker4.png",
     "static/images/trenches/7q6ch-signin-error-after-bitlocker4.png",
     "static/images/trenches/7q6ch-signin-error-after-bitlocker3.png",
-    "static/images/trenches/7q6ch-signin-error-after-bitlocker1.png",
     "content/_index.en.md",
     "content/_index.pl.md",
     "public/trenches/7q6ch-signin-error-after-bitlocker.md",
