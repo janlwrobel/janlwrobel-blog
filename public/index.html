@@ -113,13 +113,13 @@
 
 </div>
 
-<article class="first-entry"> 
+<article class="post-entry"> 
   <header class="entry-header">
     <h2 class="entry-hint-parent">Outlook and Teams Sign-In Loop on macOS After Password Reset (Keychain Fix)
     </h2>
   </header>
   <div class="entry-content">
-    <p>TL;DR After a password reset through JumpCloud, Outlook, Teams, Cloudflare Access, and other desktop applications on macOS stopped authenticating correctly.
+    <p> TL;DR After a password reset through JumpCloud, Outlook, Teams, Cloudflare Access, and other desktop applications on macOS stopped authenticating correctly.
 Browser access continued working normally, which initially made the issue look like a Microsoft 365 or Conditional Access problem.
 The actual root cause was a corrupted macOS Keychain that failed to synchronise with the new login password.
 Recreating the Keychain resolved the issue completely.

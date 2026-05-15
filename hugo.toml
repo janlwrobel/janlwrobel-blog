@@ -15,6 +15,7 @@ ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowWordCount = true
 description = 'Real IT from the trenches'
+disableSpecial1stPost = true
 
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false

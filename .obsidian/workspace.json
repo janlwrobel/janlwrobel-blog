@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/career/hello-world-career-switch.en.md",
+                "file": "content/trenches/macos-trenches-keychain-fix.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "hello-world-career-switch.en"
+              "title": "macos-trenches-keychain-fix"
             }
           }
         ]
@@ -183,9 +183,12 @@
   },
   "active": "6accfc3cde86fab5",
   "lastOpenFiles": [
+    "public/images/hello-world-cover.jpg",
+    "static/images/hello-world-cover.jpg",
+    "content/trenches/7q6ch-signin-error-after-bitlocker.md.md",
+    "content/career/hello-world-career-switch.en.md",
     "images/hello-world-cover.jpg",
     "content/powershell/online-archive-100gb-wall.md",
-    "content/trenches/7q6ch-signin-error-after-bitlocker.md.md",
     "public/tags/keychain/index.xml",
     "public/tags/jumpcloud/index.xml",
     "public/tags/cloudflare/index.xml",
@@ -207,8 +210,6 @@
     "static/images/trenches/7q6ch-signin-error-after-bitlocker3.png",
     "static/images/trenches/7q6ch-signin-error-after-bitlocker1.png",
     "content/_index.en.md",
-    "static/images/trenches/Screenshot 2026-05-11 113424.tmp.png",
-    "static/images/trenches/Screenshot 2026-05-11 113329.tmp.png",
     "content/_index.pl.md",
     "public/trenches/7q6ch-signin-error-after-bitlocker.md",
     "themes/PaperMod/README.md",
@@ -216,7 +217,6 @@
     "content/about/_index.pl.md",
     "about.md",
     "content/career/hello-world-career-switch.pl.md",
-    "content/career/hello-world-career-switch.en.md",
     "content/career/hello-world-career-switch.md"
   ]
 }

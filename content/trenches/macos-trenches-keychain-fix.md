@@ -17,6 +17,7 @@ categories:
 author: Jan Wróbel
 toc: true
 ---
+---
 ## TL;DR
 
 After a password reset through JumpCloud, Outlook, Teams, Cloudflare Access, and other desktop applications on macOS stopped authenticating correctly.
