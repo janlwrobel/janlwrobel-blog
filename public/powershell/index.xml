@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Powershells on Jan Lukasz Wrobel</title>
-    <link>https://blog.janlwrobel.it/powershell/</link>
+    <link>http://localhost:1313/powershell/</link>
     <description>Recent content in Powershells on Jan Lukasz Wrobel</description>
     <generator>Hugo</generator>
     <language>en-gb</language>
     <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.janlwrobel.it/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PowerShell Scripts: When Online Archive Hits the 100 GB Wall</title>
-      <link>https://blog.janlwrobel.it/powershell/online-archive-100gb-wall/</link>
+      <link>http://localhost:1313/powershell/online-archive-100gb-wall/</link>
       <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://blog.janlwrobel.it/powershell/online-archive-100gb-wall/</guid>
+      <guid>http://localhost:1313/powershell/online-archive-100gb-wall/</guid>
       <description>How to enable auto-expanding archive in Exchange Online when Online Archive starts hitting storage limits.</description>
     </item>
   </channel>

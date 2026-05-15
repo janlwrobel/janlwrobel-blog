@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/trenches/7q6ch-signin-error-after-bitlocker.md.md",
+                "file": "content/career/hello-world-career-switch.en.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "7q6ch-signin-error-after-bitlocker.md"
+              "title": "hello-world-career-switch.en"
             }
           }
         ]
@@ -183,6 +183,9 @@
   },
   "active": "6accfc3cde86fab5",
   "lastOpenFiles": [
+    "images/hello-world-cover.jpg",
+    "content/powershell/online-archive-100gb-wall.md",
+    "content/trenches/7q6ch-signin-error-after-bitlocker.md.md",
     "public/tags/keychain/index.xml",
     "public/tags/jumpcloud/index.xml",
     "public/tags/cloudflare/index.xml",
@@ -193,11 +196,9 @@
     "public/tags/macos/page",
     "public/tags/macos/index.xml",
     "public/tags/macos/index.html",
-    "public/tags/macos",
     "content/trenches/macos-trenches-keychain-fix.md",
     "static/images/trenches/7q6ch-signin-error-after-bitlocker2.png",
     "images/trenches/7q6ch-signin-error-after-bitlocker..md",
-    "content/trenches/7q6ch-signin-error-after-bitlocker.md.md",
     "public/images/trenches/7q6ch-signin-error-after-bitlocker3.png",
     "public/images/trenches/7q6ch-signin-error-after-bitlocker2.png",
     "public/images/trenches/7q6ch-signin-error-after-bitlocker1.png",
@@ -205,7 +206,6 @@
     "static/images/trenches/7q6ch-signin-error-after-bitlocker4.png",
     "static/images/trenches/7q6ch-signin-error-after-bitlocker3.png",
     "static/images/trenches/7q6ch-signin-error-after-bitlocker1.png",
-    "content/powershell/online-archive-100gb-wall.md",
     "content/_index.en.md",
     "static/images/trenches/Screenshot 2026-05-11 113424.tmp.png",
     "static/images/trenches/Screenshot 2026-05-11 113329.tmp.png",
