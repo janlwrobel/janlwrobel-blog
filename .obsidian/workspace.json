@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/homelab/Why-Dell-OptiPlex.pl.md",
+                "file": "content/trenches/7q6ch-signin-error-after-bitlocker.en.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Why-Dell-OptiPlex.pl"
+              "title": "7q6ch-signin-error-after-bitlocker.en"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 398.5
   },
   "right": {
     "id": "4f38f7ef344b531f",
@@ -181,10 +181,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "6accfc3cde86fab5",
+  "active": "1f925fcc35e99d92",
   "lastOpenFiles": [
-    "content/career/hello-world-career-switch.pl.md",
+    "public/trenches/7q6ch-signin-error-after-bitlocker/index.html",
+    "public/trenches/7q6ch-signin-error-after-bitlocker",
     "content/homelab/Why-Dell-OptiPlex.pl.md",
+    "content/career/hello-world-career-switch.pl.md",
     "content/career/hello-world-career-switch.en.md",
     "public/images/proxmox/enterprise-yes.jpg",
     "static/images/proxmox/enterprise-yes.jpg",
@@ -197,19 +199,18 @@
     "public/pl/tags/virtualization/page/1/index.html",
     "public/pl/tags/virtualization/page/1",
     "public/pl/tags/virtualization/page",
-    "public/pl/tags/virtualization/index.xml",
     "public/images/proxmox/Swanson-pc.gif",
     "public/images/proxmox/drake-arrow-up.png",
     "public/images/proxmox/3dells3080.jpg",
-    "content/trenches/7q6ch-signin-error-after-bitlocker.md.md",
-    "content/trenches/macos-trenches-keychain-fix.md",
+    "content/trenches/7q6ch-signin-error-after-bitlocker.en.md",
+    "content/trenches/macos-trenches-keychain-fix.en.md",
     "content/proxmox/Delle.md",
     "static/images/proxmox/Swanson-pc.gif",
     "static/images/proxmox/drake-arrow-up.png",
     "static/images/proxmox/3dells3080.jpg",
     "public/images/hello-world-cover1.jpg",
     "static/images/hello-world-cover.jpg",
-    "content/powershell/online-archive-100gb-wall.md",
+    "content/powershell/online-archive-100gb-wall.en.md",
     "images/trenches/7q6ch-signin-error-after-bitlocker..md",
     "content/_index.en.md",
     "content/_index.pl.md",

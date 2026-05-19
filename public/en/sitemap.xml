@@ -2,209 +2,209 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://blog.janlwrobel.it/categories/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="http://localhost:1313/pl/categories/"
+                href="https://blog.janlwrobel.it/pl/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="http://localhost:1313/categories/"
+                href="https://blog.janlwrobel.it/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/cloudflare/</loc>
+    <loc>https://blog.janlwrobel.it/tags/cloudflare/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://blog.janlwrobel.it/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="http://localhost:1313/pl/"
+                href="https://blog.janlwrobel.it/pl/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="http://localhost:1313/"
+                href="https://blog.janlwrobel.it/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/jumpcloud/</loc>
+    <loc>https://blog.janlwrobel.it/tags/jumpcloud/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/keychain/</loc>
+    <loc>https://blog.janlwrobel.it/tags/keychain/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/macos/</loc>
+    <loc>https://blog.janlwrobel.it/tags/macos/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/microsoft365/</loc>
+    <loc>https://blog.janlwrobel.it/tags/microsoft365/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/outlook/</loc>
+    <loc>https://blog.janlwrobel.it/tags/outlook/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/trenches/macos-trenches-keychain-fix/</loc>
+    <loc>https://blog.janlwrobel.it/trenches/macos-trenches-keychain-fix/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://blog.janlwrobel.it/tags/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="http://localhost:1313/pl/tags/"
+                href="https://blog.janlwrobel.it/pl/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="http://localhost:1313/tags/"
+                href="https://blog.janlwrobel.it/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/teams/</loc>
+    <loc>https://blog.janlwrobel.it/tags/teams/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/trenches/</loc>
+    <loc>https://blog.janlwrobel.it/categories/trenches/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/trenches/</loc>
+    <loc>https://blog.janlwrobel.it/trenches/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/troubleshooting/</loc>
+    <loc>https://blog.janlwrobel.it/tags/troubleshooting/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/7q6ch/</loc>
+    <loc>https://blog.janlwrobel.it/tags/7q6ch/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/authentication/</loc>
+    <loc>https://blog.janlwrobel.it/tags/authentication/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/azuread/</loc>
+    <loc>https://blog.janlwrobel.it/tags/azuread/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bitlocker/</loc>
+    <loc>https://blog.janlwrobel.it/tags/bitlocker/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/trenches/7q6ch-signin-error-after-bitlocker.md/</loc>
+    <loc>https://blog.janlwrobel.it/trenches/7q6ch-signin-error-after-bitlocker/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/entraid/</loc>
+    <loc>https://blog.janlwrobel.it/tags/entraid/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/exchange-online/</loc>
+    <loc>https://blog.janlwrobel.it/tags/exchange-online/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/microsoft-365/</loc>
+    <loc>https://blog.janlwrobel.it/categories/microsoft-365/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/online-archive/</loc>
+    <loc>https://blog.janlwrobel.it/tags/online-archive/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/powershell/</loc>
+    <loc>https://blog.janlwrobel.it/tags/powershell/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/powershell/online-archive-100gb-wall/</loc>
+    <loc>https://blog.janlwrobel.it/powershell/online-archive-100gb-wall/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/powershell/</loc>
+    <loc>https://blog.janlwrobel.it/powershell/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://blog.janlwrobel.it/about/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="http://localhost:1313/pl/about/"
+                href="https://blog.janlwrobel.it/pl/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="http://localhost:1313/about/"
+                href="https://blog.janlwrobel.it/about/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/career/</loc>
+    <loc>https://blog.janlwrobel.it/categories/career/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="http://localhost:1313/pl/categories/career/"
+                href="https://blog.janlwrobel.it/pl/categories/career/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="http://localhost:1313/categories/career/"
+                href="https://blog.janlwrobel.it/categories/career/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/career/</loc>
+    <loc>https://blog.janlwrobel.it/tags/career/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/career/hello-world-career-switch/</loc>
+    <loc>https://blog.janlwrobel.it/career/hello-world-career-switch/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="http://localhost:1313/pl/career/hello-world-career-switch/"
+                href="https://blog.janlwrobel.it/pl/career/hello-world-career-switch/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="http://localhost:1313/career/hello-world-career-switch/"
+                href="https://blog.janlwrobel.it/career/hello-world-career-switch/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/career-switch/</loc>
+    <loc>https://blog.janlwrobel.it/tags/career-switch/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/career/</loc>
-    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl-pl"
-                href="http://localhost:1313/pl/career/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-gb"
-                href="http://localhost:1313/career/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/helpdesk/</loc>
+    <loc>https://blog.janlwrobel.it/career/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="http://localhost:1313/pl/tags/helpdesk/"
+                href="https://blog.janlwrobel.it/pl/career/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="http://localhost:1313/tags/helpdesk/"
+                href="https://blog.janlwrobel.it/career/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/homelab/</loc>
+    <loc>https://blog.janlwrobel.it/tags/helpdesk/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="http://localhost:1313/pl/tags/homelab/"
+                href="https://blog.janlwrobel.it/pl/tags/helpdesk/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="http://localhost:1313/tags/homelab/"
+                href="https://blog.janlwrobel.it/tags/helpdesk/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/it/</loc>
+    <loc>https://blog.janlwrobel.it/tags/homelab/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="http://localhost:1313/pl/tags/it/"
+                href="https://blog.janlwrobel.it/pl/tags/homelab/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="http://localhost:1313/tags/it/"
+                href="https://blog.janlwrobel.it/tags/homelab/"
+                />
+  </url><url>
+    <loc>https://blog.janlwrobel.it/tags/it/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl-pl"
+                href="https://blog.janlwrobel.it/pl/tags/it/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-gb"
+                href="https://blog.janlwrobel.it/tags/it/"
                 />
   </url>
 </urlset>
