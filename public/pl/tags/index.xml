@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Jan Lukasz Wrobel</title>
-    <link>https://blog.janlwrobel.it/pl/tags/</link>
+    <link>http://localhost:1313/pl/tags/</link>
     <description>Recent content in Tags on Jan Lukasz Wrobel</description>
     <generator>Hugo</generator>
     <language>pl-pl</language>
     <lastBuildDate>Thu, 14 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.janlwrobel.it/pl/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/pl/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DellOptiPlex</title>
-      <link>https://blog.janlwrobel.it/pl/tags/delloptiplex/</link>
+      <link>http://localhost:1313/pl/tags/delloptiplex/</link>
       <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://blog.janlwrobel.it/pl/tags/delloptiplex/</guid>
+      <guid>http://localhost:1313/pl/tags/delloptiplex/</guid>
       <description></description>
     </item>
     <item>
       <title>Homelab</title>
-      <link>https://blog.janlwrobel.it/pl/tags/homelab/</link>
+      <link>http://localhost:1313/pl/tags/homelab/</link>
       <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://blog.janlwrobel.it/pl/tags/homelab/</guid>
+      <guid>http://localhost:1313/pl/tags/homelab/</guid>
       <description></description>
     </item>
     <item>
       <title>Proxmox</title>
-      <link>https://blog.janlwrobel.it/pl/tags/proxmox/</link>
+      <link>http://localhost:1313/pl/tags/proxmox/</link>
       <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://blog.janlwrobel.it/pl/tags/proxmox/</guid>
+      <guid>http://localhost:1313/pl/tags/proxmox/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtualization</title>
-      <link>https://blog.janlwrobel.it/pl/tags/virtualization/</link>
+      <link>http://localhost:1313/pl/tags/virtualization/</link>
       <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://blog.janlwrobel.it/pl/tags/virtualization/</guid>
+      <guid>http://localhost:1313/pl/tags/virtualization/</guid>
       <description></description>
     </item>
     <item>
       <title>Helpdesk</title>
-      <link>https://blog.janlwrobel.it/pl/tags/helpdesk/</link>
+      <link>http://localhost:1313/pl/tags/helpdesk/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://blog.janlwrobel.it/pl/tags/helpdesk/</guid>
+      <guid>http://localhost:1313/pl/tags/helpdesk/</guid>
       <description></description>
     </item>
     <item>
       <title>IT</title>
-      <link>https://blog.janlwrobel.it/pl/tags/it/</link>
+      <link>http://localhost:1313/pl/tags/it/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://blog.janlwrobel.it/pl/tags/it/</guid>
+      <guid>http://localhost:1313/pl/tags/it/</guid>
       <description></description>
     </item>
     <item>
       <title>Kariera</title>
-      <link>https://blog.janlwrobel.it/pl/tags/kariera/</link>
+      <link>http://localhost:1313/pl/tags/kariera/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://blog.janlwrobel.it/pl/tags/kariera/</guid>
+      <guid>http://localhost:1313/pl/tags/kariera/</guid>
       <description></description>
     </item>
     <item>
       <title>Przebranżowienie</title>
-      <link>https://blog.janlwrobel.it/pl/tags/przebran%C5%BCowienie/</link>
+      <link>http://localhost:1313/pl/tags/przebran%C5%BCowienie/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://blog.janlwrobel.it/pl/tags/przebran%C5%BCowienie/</guid>
+      <guid>http://localhost:1313/pl/tags/przebran%C5%BCowienie/</guid>
       <description></description>
     </item>
   </channel>

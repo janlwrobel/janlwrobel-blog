@@ -1,21 +1,21 @@
 [[main]]
 name = 'Strona glowna'
-url = '/'
+url = '/pl/'
 weight = 10
 
 [[main]]
 name = 'O mnie'
-url = '/about/'
+url = '/pl/about/'
 weight = 20
 
 [[main]]
 name = 'Kariera'
-url = '/career/'
+url = '/pl/career/'
 weight = 30
 
 [[main]]
 name = 'Homelab'
-url = '/categories/homelab/'
+url = '/pl/categories/homelab/'
 weight = 40
 
 

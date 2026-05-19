@@ -2,158 +2,158 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.janlwrobel.it/pl/categories/</loc>
+    <loc>http://localhost:1313/pl/categories/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="https://blog.janlwrobel.it/categories/"
+                href="http://localhost:1313/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/categories/"
+                href="http://localhost:1313/pl/categories/"
                 />
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/tags/delloptiplex/</loc>
+    <loc>http://localhost:1313/pl/tags/delloptiplex/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/categories/homelab/</loc>
+    <loc>http://localhost:1313/pl/categories/homelab/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/tags/homelab/</loc>
+    <loc>http://localhost:1313/pl/tags/homelab/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="https://blog.janlwrobel.it/tags/homelab/"
+                href="http://localhost:1313/tags/homelab/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/tags/homelab/"
+                href="http://localhost:1313/pl/tags/homelab/"
                 />
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/homelab/why-dell-optiplex/</loc>
+    <loc>http://localhost:1313/pl/homelab/why-dell-optiplex/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/homelab/</loc>
+    <loc>http://localhost:1313/pl/homelab/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/tags/proxmox/</loc>
+    <loc>http://localhost:1313/pl/tags/proxmox/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/</loc>
+    <loc>http://localhost:1313/pl/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="https://blog.janlwrobel.it/"
+                href="http://localhost:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/"
+                href="http://localhost:1313/pl/"
                 />
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/tags/</loc>
+    <loc>http://localhost:1313/pl/tags/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="https://blog.janlwrobel.it/tags/"
+                href="http://localhost:1313/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/tags/"
+                href="http://localhost:1313/pl/tags/"
                 />
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/tags/virtualization/</loc>
+    <loc>http://localhost:1313/pl/tags/virtualization/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/about/</loc>
+    <loc>http://localhost:1313/pl/about/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="https://blog.janlwrobel.it/about/"
+                href="http://localhost:1313/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/about/"
+                href="http://localhost:1313/pl/about/"
                 />
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/categories/career/</loc>
+    <loc>http://localhost:1313/pl/categories/career/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="https://blog.janlwrobel.it/categories/career/"
+                href="http://localhost:1313/categories/career/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/categories/career/"
+                href="http://localhost:1313/pl/categories/career/"
                 />
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/career/</loc>
+    <loc>http://localhost:1313/pl/career/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="https://blog.janlwrobel.it/career/"
+                href="http://localhost:1313/career/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/career/"
+                href="http://localhost:1313/pl/career/"
                 />
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/tags/helpdesk/</loc>
+    <loc>http://localhost:1313/pl/tags/helpdesk/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="https://blog.janlwrobel.it/tags/helpdesk/"
+                href="http://localhost:1313/tags/helpdesk/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/tags/helpdesk/"
+                href="http://localhost:1313/pl/tags/helpdesk/"
                 />
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/tags/it/</loc>
+    <loc>http://localhost:1313/pl/tags/it/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="https://blog.janlwrobel.it/tags/it/"
+                href="http://localhost:1313/tags/it/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/tags/it/"
+                href="http://localhost:1313/pl/tags/it/"
                 />
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/tags/kariera/</loc>
+    <loc>http://localhost:1313/pl/tags/kariera/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/tags/przebran%C5%BCowienie/</loc>
+    <loc>http://localhost:1313/pl/tags/przebran%C5%BCowienie/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.janlwrobel.it/pl/career/hello-world-career-switch/</loc>
+    <loc>http://localhost:1313/pl/career/hello-world-career-switch/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-gb"
-                href="https://blog.janlwrobel.it/career/hello-world-career-switch/"
+                href="http://localhost:1313/career/hello-world-career-switch/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl-pl"
-                href="https://blog.janlwrobel.it/pl/career/hello-world-career-switch/"
+                href="http://localhost:1313/pl/career/hello-world-career-switch/"
                 />
   </url>
 </urlset>
