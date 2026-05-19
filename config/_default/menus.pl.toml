@@ -13,4 +13,9 @@ name = 'Kariera'
 url = '/career/'
 weight = 30
 
+[[main]]
+name = 'Homelab'
+url = '/categories/homelab/'
+weight = 40
+
 

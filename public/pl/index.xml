@@ -6,8 +6,15 @@
     <description>Recent content in Start on Jan Lukasz Wrobel</description>
     <generator>Hugo</generator>
     <language>pl-pl</language>
-    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.janlwrobel.it/pl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HomeLab #001 - Dlaczego Dell OptiPlex to świetny sprzęt do klastra Proxmox</title>
+      <link>https://blog.janlwrobel.it/pl/homelab/why-dell-optiplex/</link>
+      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://blog.janlwrobel.it/pl/homelab/why-dell-optiplex/</guid>
+      <description>Dlaczego małe biznesowe Delle są idealne do nauki Proxmox, homelabu i psucia wirtualnych maszyn zamiast prawdziwego serwera.</description>
+    </item>
     <item>
       <title>Zmaina Kariery #001 - Hello World</title>
       <link>https://blog.janlwrobel.it/pl/career/hello-world-career-switch/</link>
