@@ -11,10 +11,11 @@ tags:
 categories:
   - Homelab
 author: Jan Wróbel
+toc: true
 cover:
   image: images/proxmox/3dells3080.jpg
-  alt: Dell Optiplex 3080
-toc: true
+  alt: Dell Optiplex 3080 Proxmox Cluster
+  caption: Małe Delle, wielki chaos
 ---
 ## Mój setup
 
@@ -27,7 +28,7 @@ Czy to jest enterprise data center?
 
 ![Yes](/images/proxmox/enterprise-yes.jpg)
 
-Czy wygląda jak pudełko po ptasim mleczku?
+Czy wygląda jak pudełka po ptasim mleczku?
 
 Tak.
 
